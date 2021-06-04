@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+       <style media="screen">
+         th,td{
+           border: 1px solid black;
+         }
+         table{
+           border-collapse: collapse;
+         }
+       </style>
+
+  </head>
+  <body>
+
+           <input id="search-line" type="search"  oninput="search()" />
+
+          <table>
+            <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+              <tbody id="tbody">
+                 <tr>
+                    <td>Ricardo</td>
+                    <td>Milos</td>
+                </tr>
+
+                <tr>
+                   <td>Billy</td>
+                   <td>Herrington</td>
+               </tr>
+
+               <tr>
+                  <td>Van</td>
+                  <td>Darkholm</td>
+              </tr>
+
+              <tr>
+                 <td>Negr</td>
+                 <td>Vitalya</td>
+             </tr>
+
+              </tbody>
+            </thead>
+          </table>
+
+  </body>
+
+          <script type="text/javascript">
+
+            function search(){
+                var search = document.getElementById("search").value.toLowerCase();
+                 var tbody = document.getElementById('tbody').value;
+                  var tr = tbody.getElementsByTagName("tr");
+//for start
+                for (var i = 0; i tr.length; i++) {
+                    var td = tr[i].getElementsByTagName("td");
+
+                    for (var j = 0; j < td.length; j++) {
+                        if (td[j].innerHTML.toLowerCase().includes(search)) {
+                           tr[i].style.display="revert";
+                           break;
+                        }else{
+                            tr[i].style.display="none";
+                        }
+                    }
+                }
+//for stop
+
+            }
+          </script>
+
+
+
+
+
+</html>
